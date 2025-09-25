@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trekon - Guided Running Workouts Built for the Road</title>
+    <meta name="description" content="Custom running training plans that adapt to your goals. Join thousands of runners improving with Trekon's personalized workouts.">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Alternative font that's closer to ITC Franklin Gothic LT -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS inline for performance -->
+    <style>
+        /* Critical above-the-fold styles only. All other styles moved to styles.css. */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d5016 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="#home">
+                        <img src="images/Trekon_Logo.png" alt="Trekon Logo" class="logo-image">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#join" class="cta-button">Get Started</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Run Smarter.<br>Train Your Way.</h1>
+                <p class="hero-subtitle">Custom plans that fit your pace, goals, and schedule, with guided workouts designed for the real world — no running track required.</p>
+                <div class="hero-cta">
+                    <a href="#join" class="cta-button primary">Start Your Journey</a>
+                    <a href="#how-it-works" class="cta-button secondary">Learn More</a>
+                </div>
+                <div class="app-store-badges">
+                    <a href="#" class="app-store-badge">
+                        <div class="svg-crop-container">
+                            <img src="images/app-store.svg" class="svg-crop" alt="Download on App Store">
+                        </div>
+                    </a>
+                    <a href="#" class="app-store-badge">
+                        <div class="svg-crop-container">
+                            <img src="images/google-play.svg" class="svg-crop" alt="Get it on Google Play">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'});">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="app-showcase" id="features">
+        <div class="container">
+            <div class="showcase-header">
+                <h2>Personalized Training Plans</h2>
+                <h3>Science-backed training that evolves with you, keeping every workout challenging, effective, and purposeful.</h3>
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <ul class="feature-list">
+                        <li><span class="feature-icon">✓</span>Speed workouts, tempo runs, and race-day prep: If you've got pavement, you've got a plan</li>
+                        <li><span class="feature-icon">✓</span>Personal Pacing - Workouts calibrated to your fitness level</li>
+                        <li><span class="feature-icon">✓</span>Smart Adaptation - Plans automatically adjust based on your progress</li>
+                        <li><span class="feature-icon">✓</span>Custom Plan Support - Upload an existing training plan and let the app break it down into guided workouts</li>
+                    </ul>
+                </div>
+                <div class="showcase-devices">
+                    <div class="device-mockup">
+                <img src="images/WorkoutPlans.svg" alt="Calendar view of training plan" class="app-screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="app-showcase" id="features2">
+        <div class="container">
+            <div class="showcase-header">
+                <h2>Flexible Scheduling</h2>
+                <h3>Life happens. Your training plan should adapt. Smart scheduling technology that works around your busy life, not against it.</h3>
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <div class="device-mockup">
+                        <img src="images/Flow_Diagram/calendarView.png" alt="Calendar view of training plan" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="showcase-text">
+                    <ul class="feature-list">
+                        <li><span class="feature-icon">✓</span>Easy Rescheduling - Drag and drop workouts with automatic adjustments</li>
+                        <li><span class="feature-icon">✓</span>Recovery-Aware Adjustments - Move workouts with confidence, keeping rest days protected and tough sessions sensibly spaced</li>
+                        <li><span class="feature-icon">✓</span>Calendar Integration - Syncs with your existing calendar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="app-showcase" id="features3">
+        <div class="container">
+            <div class="showcase-header">
+                <h2>Track Workouts & Analyze Performance</h2>
+                <h3>Accurate tracking and in-depth analytics to monitor your progress, finetune training, and reach your goals</h3>
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <ul class="feature-list">
+                        <li><span class="feature-icon">✓</span>Workout Stats - See your distance, pace, and route as you run.</li>
+                        <li><span class="feature-icon">✓</span>Performance Insights - Analyse trends, measure improvements, and get race time predictions</li>
+                        <li><span class="feature-icon">✓</span>Device Integration - Seamlessly sync with Strava</li>
+                        </ul>
+                </div>
+                <div class="showcase-devices">
+                    <div class="device-mockup">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="images/Flow_Diagram/TrackWorkouts.png" alt="Workout tracking and guidance" class="app-screenshot">
+                            <img src="images/strava-logo-png-4.webp" alt="Strava Logo" style="height: 10rem; width: auto;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Screenshots Section -->
+    <section class="app-showcase" id="how-it-works">
+        <div class="container how-it-works-content">
+            <div class="showcase-header">
+                <h2>Focus on your stride, not your screen.</h2>
+                <h3>Real-time audio cues for intervals, pace changes, and workout progress keep you informed without constantly checking your watch or phone.</h3>
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <div class="audio-quotes">
+                        <p class="quote"><em>"This lap is 1 mile at 8:45/mile pace."</em></p>
+                        <p class="quote"><em>"Halfway there — keep it up!"</em></p>
+                        <p class="quote"><em>"Pace on target — great job!"</em></p>
+                        <p class="quote"><em>"Almost there — next up is 60 seconds rest."</em></p>
+                        <p class="quote"><em>"Next interval in 10 seconds."</em></p>
+                        <p class="quote"><em>"Current pace is 9:00/mile — target pace 8:30/mile. Pick it up!"</em></p>
+                    </div>
+                </div>
+            </div>
+            <p class="audio-description">Choose your preferred voice and adjust the level of audio guidance to match your training style—whether you want gentle reminders or full coaching support.</p>
+        </div>
+        <style>
+    /* All #how-it-works styles moved to styles.css. */
+        </style>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join the Community</h2>
+                <p>Thousands of runners are already achieving their goals with Trekon</p>
+            </div>
+            
+            <div class="community-carousel">
+                <div class="scrolling-container">
+                    <div class="scroll-track">
+                        <!-- First set of images -->
+                        <div class="runner-card">
+                            <img src="images/Website Images/Banner_Man_Running.jpg" alt="Marcus running">
+                            <div class="runner-stats">
+                                <div class="stat-item">8.02km</div>
+                                <div class="stat-item">5:05/km</div>
+                                <div class="stat-item">40m 51s</div>
+                            </div>
+                        </div>
+                        
+                        <div class="runner-card">
+                            <img src="images/Website Images/Two_ladies_jogging.jpg" alt="Sarah & Emma jogging">
+                            <div class="runner-stats">
+                                <div class="stat-item">5.2km</div>
+                                <div class="stat-item">6:15/km</div>
+                                <div class="stat-item">32m 18s</div>
+                            </div>
+                        </div>
+                        
+                        <div class="runner-card">
+                            <img src="images/Website Images/Runi_club_picture.jpg" alt="Running club group">
+                            <div class="runner-stats">
+                                <div class="stat-item">10.0km</div>
+                                <div class="stat-item">5:30/km</div>
+                                <div class="stat-item">55m 00s</div>
+                            </div>
+                        </div>
+                        
+                        <div class="runner-card">
+                            <img src="images/Website Images/IMG_8530.jpeg" alt="Trail runner">
+                            <div class="runner-stats">
+                                <div class="stat-item">15.3km</div>
+                                <div class="stat-item">5:50/km</div>
+                                <div class="stat-item">1h 29m</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="runner-card">
+                            <img src="images/Website Images/Banner_Man_Running.jpg" alt="Marcus running">
+                            <div class="runner-stats">
+                                <div class="stat-item">8.02km</div>
+                                <div class="stat-item">5:05/km</div>
+                                <div class="stat-item">40m 51s</div>
+                            </div>
+                        </div>
+                        
+                        <div class="runner-card">
+                            <img src="images/Website Images/Two_ladies_jogging.jpg" alt="Sarah & Emma jogging">
+                            <div class="runner-stats">
+                                <div class="stat-item">5.2km</div>
+                                <div class="stat-item">6:15/km</div>
+                                <div class="stat-item">32m 18s</div>
+                            </div>
+                        </div>
+                        
+                        <div class="runner-card">
+                            <img src="images/Website Images/Runi_club_picture.jpg" alt="Running club group">
+                            <div class="runner-stats">
+                                <div class="stat-item">10.0km</div>
+                                <div class="stat-item">5:30/km</div>
+                                <div class="stat-item">55m 00s</div>
+                            </div>
+                        </div>
+                        
+                        <div class="runner-card">
+                            <img src="images/Website Images/IMG_8530.jpeg" alt="Trail runner">
+                            <div class="runner-stats">
+                                <div class="stat-item">15.3km</div>
+                                <div class="stat-item">5:50/km</div>
+                                <div class="stat-item">1h 29m</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Runner Banner Section -->
+    <section class="runner-banner">
+        <div class="banner-content">
+            <div class="banner-image">
+                <img src="images/Website Images/Banner_Man_Running.jpg" alt="Runner in action">
+            </div>
+            <div class="banner-overlay">
+                <div class="container">
+                    <h2>Ready to Hit the Road?</h2>
+                    <a href="#join" class="cta-button primary">Start Your Journey</a>
+                    <div class="cta-buttons">
+                    <div class="app-store-badges">
+                        <a href="#" class="app-store-badge">
+                            <div class="svg-crop-container">
+                                <img src="images/app-store.svg" class="svg-crop" alt="Download on App Store">
+                            </div>
+                        </a>
+                        <a href="#" class="app-store-badge">
+                            <div class="svg-crop-container">
+                                <img src="images/google-play.svg" class="svg-crop" alt="Get it on Google Play">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Trekon</h3>
+                    <p>Guided running workouts built for the road</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Download</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Privacy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="images/Trekon_Logo.png" alt="Trekon Logo">
+                </div>
+                <p>&copy; 2025 Trekon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</html>
