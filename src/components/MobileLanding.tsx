@@ -1,12 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Target, TrendingUp, Headphones } from "lucide-react";
+import { Target, TrendingUp, Headphones, X } from "lucide-react";
+import { useState } from "react";
 import runnerHero from "@/assets/runner-hero.jpg";
 import appMockup from "@/assets/copied/WorkoutPlans.svg";
 import appStoreIcon from "@/assets/app-store.svg";
 import googlePlayIcon from "@/assets/google-play.svg";
+import comingSoonVideo from "@/assets/ComingSoon.mp4";
 
 const MobileLanding = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
   // Device detection function
   const detectDevice = () => {
     const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
@@ -25,42 +29,13 @@ const MobileLanding = () => {
     return 'desktop';
   };
 
-  // High-converting smart download - direct for mobile, scroll for desktop
+  // Show coming soon video for all buttons
   const handleSmartDownload = () => {
-    const device = detectDevice();
-    console.log(`Device detected: ${device}`);
-
-    // Direct download for mobile devices (highest conversion)
-    if (device === 'ios') {
-      handleAppDownload('ios');
-      return;
-    }
-
-    if (device === 'android') {
-      handleAppDownload('android');
-      return;
-    }
-
-    // Fallback: Scroll to options for desktop users
-    const appStoreSection = document.getElementById('app-store-buttons');
-    if (appStoreSection) {
-      appStoreSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-    }
-  };
-
-  const handleAppDownload = (store: 'ios' | 'android') => {
-    // Analytics tracking for conversion optimization
-    console.log(`Download initiated: ${store}`);
-
-    // Redirect to app stores
-    if (store === 'ios') {
-      window.open('https://apps.apple.com/app/trekon', '_blank');
-    } else {
-      window.open('https://play.google.com/store/apps/details?id=com.trekon', '_blank');
-    }
+    setShowComingSoon(true);
+  }; const handleAppDownload = (store: 'ios' | 'android') => {
+    // Show coming soon video instead of redirecting
+    console.log(`Coming soon video shown for: ${store}`);
+    setShowComingSoon(true);
   };
 
   return (
@@ -238,6 +213,47 @@ const MobileLanding = () => {
           © 2025 Trekon. All rights reserved.
         </p>
       </footer>
+
+      {/* Coming Soon Video Modal */}
+      {showComingSoon && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setShowComingSoon(false)}
+        >
+          <div 
+            className="relative w-full max-w-sm mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowComingSoon(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            
+            {/* Video Container */}
+            <div className="bg-black rounded-lg overflow-hidden shadow-2xl">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto"
+                onClick={() => setShowComingSoon(false)}
+              >
+                <source src={comingSoonVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            
+            {/* Tap to close hint */}
+            <p className="text-white/70 text-sm text-center mt-4">
+              Tap anywhere to close
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
