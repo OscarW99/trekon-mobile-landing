@@ -1,22 +1,19 @@
-# Welcome to your Lovable project
+# Trekon Mobile Landing Page
 
-## Project info
+Mobile-first landing page for the Trekon running app.
 
-**URL**: https://lovable.dev/projects/75458be7-d3eb-4445-a97d-e6a2814b3595
+## Features
 
-## How can I edit this code?
+- Responsive mobile-first design
+- Smart device detection for app store redirects
+- Modern React + TypeScript + Tailwind CSS
+- Optimized for conversion
 
-There are several ways of editing your application.
+## Development
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/75458be7-d3eb-4445-a97d-e6a2814b3595) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+npm install
+npm run dev
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -71,3 +68,6 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+=======
+# trekon-mobile-landing
+>>>>>>> 84cf9097a959f38640bc4b252df740e0f0105817
