@@ -216,11 +216,11 @@ const MobileLanding = () => {
 
       {/* Coming Soon Video Modal */}
       {showComingSoon && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={() => setShowComingSoon(false)}
         >
-          <div 
+          <div
             className="relative w-full max-w-sm mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
@@ -231,7 +231,7 @@ const MobileLanding = () => {
             >
               <X className="w-8 h-8" />
             </button>
-            
+
             {/* Video Container */}
             <div className="bg-black rounded-lg overflow-hidden shadow-2xl">
               <video
@@ -246,7 +246,7 @@ const MobileLanding = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            
+
             {/* Tap to close hint */}
             <p className="text-white/70 text-sm text-center mt-4">
               Tap anywhere to close
