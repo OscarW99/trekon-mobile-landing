@@ -1,18 +1,14 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+export default defineConfig({
+  plugins: [react()],
+  // Use a cache dir outside the OneDrive-synced folder to avoid EPERM errors on Windows
+  cacheDir: path.resolve(__dirname, '../.vite-cache/trekon-mobile'),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
-}));
+})
