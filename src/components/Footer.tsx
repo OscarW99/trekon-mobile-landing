@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center gap-5">
           {/* Logo */}
           <img
-            src="/images/Trekon_Logo.png"
+            src="/images/Trekon_Logo_Transparent.png"
             alt="Trekon"
-            className="h-5 w-auto brightness-0 invert opacity-50"
+            className="h-7 w-auto brightness-0 invert opacity-50"
             onError={(e) => {
               const t = e.target as HTMLImageElement
               t.style.display = 'none'

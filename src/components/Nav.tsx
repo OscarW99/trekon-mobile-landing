@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X } from '@phosphor-icons/react'
+import ComingSoonModal from './ComingSoonModal'
 
 const NAV_OFFSET = 64
 
@@ -78,9 +78,9 @@ export default function Nav() {
           }}
         >
           <img
-            src="/images/Trekon_Logo.png"
+            src="/images/Trekon_Logo_Transparent.png"
             alt="Trekon"
-            className="h-6 w-auto brightness-0 invert"
+            className="h-8 w-auto brightness-0 invert"
             onError={(e) => {
               const t = e.target as HTMLImageElement
               t.style.display = 'none'
@@ -176,41 +176,7 @@ export default function Nav() {
         )}
       </AnimatePresence>
 
-      {/* Video modal */}
-      <AnimatePresence>
-        {showVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-5"
-            onClick={() => setShowVideo(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-              className="relative w-full max-w-sm"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setShowVideo(false)}
-                className="absolute -top-11 right-0 w-9 h-9 rounded-full glass-panel
-                  flex items-center justify-center text-ink-secondary"
-              >
-                <X size={16} weight="bold" />
-              </button>
-              <div className="rounded-3xl overflow-hidden bg-black">
-                <video autoPlay loop muted playsInline className="w-full h-auto" onClick={() => setShowVideo(false)}>
-                  <source src="/videos/ComingSoon.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <p className="text-ink-muted text-xs text-center mt-4">Tap anywhere to close</p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ComingSoonModal isOpen={showVideo} onClose={() => setShowVideo(false)} />
     </>
   )
 }

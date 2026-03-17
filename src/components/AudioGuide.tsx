@@ -4,7 +4,7 @@ import { Headphones, SpeakerHigh } from '@phosphor-icons/react'
 const quotes = [
   '"This lap is 1 mile at 8:45 per mile pace."',
   '"Halfway there, keep it up!"',
-  '"Pace on target — great job!"',
+  '"Segment complete in 3 minutes 45 seconds. Average pace: 5 minutes 20 seconds per kilometer."',
   '"Almost there. Next up is 60 seconds rest."',
   '"Next interval in 10 seconds."',
   '"Current pace 9:00/mile. Target 8:30. Pick it up!"',

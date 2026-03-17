@@ -3,10 +3,14 @@ export interface BlogPost {
   title: string
   excerpt: string
   date: string
-  readTime: number
-  category: string
   coverImage: string
   content: string
+}
+
+export function getReadTime(content: string): number {
+  const text = content.replace(/<[^>]+>/g, ' ')
+  const words = text.trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.ceil(words / 200))
 }
 
 // Add your articles here. Each object is one blog post.
@@ -20,8 +24,6 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       'More miles is not always the answer. Here is what the research actually says about training volume, adaptation, and why rest is where progress happens.',
     date: '2025-11-18',
-    readTime: 6,
-    category: 'Training',
     coverImage: 'https://picsum.photos/seed/overtrain/800/450',
     content: `
 <p>Add your article content here. This is a placeholder post that shows how the blog works.</p>
@@ -36,8 +38,6 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       'Easy pace feels wrong when you are trying to get faster. But the science behind Zone 2 training is compelling, and it might be the missing piece in your plan.',
     date: '2025-10-29',
-    readTime: 8,
-    category: 'Science',
     coverImage: 'https://picsum.photos/seed/slowrun/800/450',
     content: `
 <p>Add your article content here. This is a placeholder post.</p>
@@ -51,8 +51,6 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       'Motivation gets you started. Systems keep you going. Here are the behaviour-design principles that make consistent training feel automatic.',
     date: '2025-10-07',
-    readTime: 5,
-    category: 'Mindset',
     coverImage: 'https://picsum.photos/seed/runhabit/800/450',
     content: `
 <p>Add your article content here. This is a placeholder post.</p>

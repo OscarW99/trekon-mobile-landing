@@ -1,9 +1,9 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Clock, Tag } from '@phosphor-icons/react'
+import { ArrowLeft, Clock } from '@phosphor-icons/react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
-import { getPostBySlug, getRecentPosts } from '../lib/blog-data'
+import { getPostBySlug, getRecentPosts, getReadTime } from '../lib/blog-data'
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-GB', {
@@ -69,15 +69,9 @@ export default function BlogPost() {
           >
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-3 mb-5">
-              <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em]
-                font-semibold text-accent rounded-full px-3 py-1"
-                style={{ background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.15)' }}>
-                <Tag size={9} weight="fill" />
-                {post.category}
-              </span>
               <span className="inline-flex items-center gap-1.5 text-xs text-ink-muted">
                 <Clock size={11} />
-                {post.readTime} min
+                {getReadTime(post.content)} min read
               </span>
               <time className="text-xs text-ink-muted">{formatDate(post.date)}</time>
             </div>
@@ -145,10 +139,6 @@ export default function BlogPost() {
                         className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
                       />
                       <div className="flex flex-col justify-center min-w-0">
-                        <span className="text-[10px] uppercase tracking-[0.12em] font-semibold
-                          text-accent mb-1">
-                          {rel.category}
-                        </span>
                         <h4 className="font-display font-semibold text-sm text-ink leading-tight
                           group-hover:text-accent transition-colors duration-200 line-clamp-2">
                           {rel.title}

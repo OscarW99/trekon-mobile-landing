@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowLeft } from '@phosphor-icons/react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
-import { blogPosts } from '../lib/blog-data'
+import { blogPosts, getReadTime } from '../lib/blog-data'
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-GB', {
@@ -133,11 +133,7 @@ export default function Blog() {
                       {/* Content */}
                       <div className="p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <span className="text-[10px] uppercase tracking-[0.15em] font-semibold text-accent">
-                            {post.category}
-                          </span>
-                          <span className="text-ink-muted text-xs">·</span>
-                          <span className="text-ink-muted text-xs">{post.readTime} min read</span>
+                          <span className="text-ink-muted text-xs">{getReadTime(post.content)} min read</span>
                           <span className="text-ink-muted text-xs">·</span>
                           <time className="text-ink-muted text-xs">{formatDate(post.date)}</time>
                         </div>
