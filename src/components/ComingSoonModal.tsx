@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ArrowRight, CheckCircle } from '@phosphor-icons/react'
+import { submitToGAS } from '../lib/gas'
 
 interface Props {
   isOpen: boolean
@@ -24,7 +25,7 @@ export default function ComingSoonModal({ isOpen, onClose }: Props) {
       return
     }
     setError('')
-    console.log('Notify email captured:', trimmed)
+    submitToGAS({ type: 'email_capture', email: trimmed })
     setSubmitted(true)
   }
 

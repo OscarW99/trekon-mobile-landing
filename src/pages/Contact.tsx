@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, PaperPlaneTilt } from '@phosphor-icons/react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import { submitToGAS } from '../lib/gas'
 
 type Status = 'idle' | 'sending' | 'sent'
 
@@ -30,7 +31,9 @@ export default function Contact() {
     if (Object.keys(errs).length) { setErrors(errs); return }
     setErrors({})
     setStatus('sending')
-    setTimeout(() => setStatus('sent'), 800)
+    submitToGAS({ type: 'contact', name: name.trim(), email: email.trim(), message: message.trim() })
+      .then(() => setStatus('sent'))
+      .catch(() => setStatus('sent'))
   }
 
   return (

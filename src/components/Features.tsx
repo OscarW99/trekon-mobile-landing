@@ -35,7 +35,7 @@ const features: Feature[] = [
       'Recovery-aware: rest days protected, tough sessions sensibly spaced',
       'Syncs with your existing calendar',
     ],
-    image: '/images/Flow_Diagram/calendarView.png',
+    image: '/images/trekon_calendar.svg',
     imageAlt: 'Calendar view of training schedule',
   },
   {
@@ -48,7 +48,7 @@ const features: Feature[] = [
       'Analyse trends, measure improvements, get race time predictions',
       'Seamlessly sync with Strava',
     ],
-    image: '/images/Flow_Diagram/TrackWorkouts.png',
+    image: '/images/trekon_tracking.svg',
     imageAlt: 'Workout tracking analytics',
   },
 ]
