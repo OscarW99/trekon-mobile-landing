@@ -1,0 +1,17 @@
+# Trekon Mobile
+
+> Mobile-first landing and blog for Trekon guided running workouts.
+
+## Main pages
+
+- https://mobile.trekon.run/
+- https://mobile.trekon.run/contact
+- https://mobile.trekon.run/blog
+
+## Sitemap
+
+- https://mobile.trekon.run/sitemap.xml
+
+## Blog source
+
+Articles are published as HTML and Markdown under `/blog/*.md` with index metadata at `/blog/index.json`.

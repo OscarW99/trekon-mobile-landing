@@ -1,17 +1,10 @@
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { ArrowLeft } from '@phosphor-icons/react'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
-import { blogPosts, getReadTime } from '../lib/blog-data'
-
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  })
-}
+import { useEffect, useMemo, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowLeft, CaretLeft, CaretRight } from "@phosphor-icons/react";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import { BlogPostMeta, formatDate } from "../lib/blog";
 
 const containerVariants = {
   hidden: {},
@@ -29,10 +22,43 @@ const itemVariants = {
   },
 }
 
+const PER_PAGE = 9;
+
 export default function Blog() {
-  const sorted = [...blogPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  )
+  const [posts, setPosts] = useState<BlogPostMeta[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    fetch("/blog/index.json")
+      .then((r) => r.json())
+      .then((list: BlogPostMeta[]) => setPosts(list || []))
+      .catch(() => setPosts([]))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const sorted = useMemo(
+    () => [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    [posts]
+  );
+
+  const totalPages = Math.max(1, Math.ceil(sorted.length / PER_PAGE));
+  const rawPage = parseInt(searchParams.get("page") || "1", 10);
+  const currentPage = Math.min(
+    Math.max(1, Number.isFinite(rawPage) ? rawPage : 1),
+    totalPages
+  );
+  const paginated = useMemo(() => {
+    const start = (currentPage - 1) * PER_PAGE;
+    return sorted.slice(start, start + PER_PAGE);
+  }, [sorted, currentPage]);
+
+  const goToPage = (p: number) => {
+    const next = Math.min(Math.max(1, p), totalPages);
+    if (next <= 1) setSearchParams({});
+    else setSearchParams({ page: String(next) });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -95,12 +121,11 @@ export default function Blog() {
           </motion.div>
 
           {/* Post list */}
-          {sorted.length === 0 ? (
+          {loading ? (
+            <p className="text-ink-muted text-sm text-center py-16">Loading articles…</p>
+          ) : sorted.length === 0 ? (
             <p className="text-ink-muted text-sm text-center py-16">
-              No articles yet. Add posts to{' '}
-              <code className="font-mono text-xs bg-surface-light rounded px-1.5 py-0.5">
-                src/lib/blog-data.ts
-              </code>
+              No articles yet.
             </p>
           ) : (
             <motion.div
@@ -109,7 +134,7 @@ export default function Blog() {
               animate="visible"
               className="space-y-4"
             >
-              {sorted.map((post) => (
+              {paginated.map((post) => (
                 <motion.div key={post.slug} variants={itemVariants}>
                   <Link to={`/blog/${post.slug}`} className="group block">
                     <div
@@ -123,7 +148,7 @@ export default function Blog() {
                       {/* Cover */}
                       <div className="overflow-hidden h-44">
                         <img
-                          src={post.coverImage}
+                          src={post.image || "https://picsum.photos/seed/trekon-blog/800/450"}
                           alt={post.title}
                           className="w-full h-full object-cover
                             transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]
@@ -133,7 +158,7 @@ export default function Blog() {
                       {/* Content */}
                       <div className="p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <span className="text-ink-muted text-xs">{getReadTime(post.content)} min read</span>
+                          <span className="text-ink-muted text-xs">{post.readTime || 1} min read</span>
                           <span className="text-ink-muted text-xs">·</span>
                           <time className="text-ink-muted text-xs">{formatDate(post.date)}</time>
                         </div>
@@ -142,7 +167,7 @@ export default function Blog() {
                           {post.title}
                         </h2>
                         <p className="text-ink-secondary text-xs leading-relaxed line-clamp-2">
-                          {post.excerpt}
+                          {post.excerpt || post.title}
                         </p>
                       </div>
                     </div>
@@ -151,10 +176,43 @@ export default function Blog() {
               ))}
             </motion.div>
           )}
+
+          {!loading && sorted.length > PER_PAGE && (
+            <nav
+              className="mt-10 flex flex-wrap items-center justify-center gap-2"
+              aria-label="Blog pagination"
+            >
+              <button
+                type="button"
+                onClick={() => goToPage(currentPage - 1)}
+                disabled={currentPage <= 1}
+                className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs text-ink-muted
+                  transition-colors hover:text-ink-secondary disabled:opacity-40 disabled:pointer-events-none"
+                style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                <CaretLeft size={14} weight="bold" />
+                Prev
+              </button>
+              <span className="px-3 text-xs text-ink-muted">
+                {currentPage} / {totalPages}
+              </span>
+              <button
+                type="button"
+                onClick={() => goToPage(currentPage + 1)}
+                disabled={currentPage >= totalPages}
+                className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs text-ink-muted
+                  transition-colors hover:text-ink-secondary disabled:opacity-40 disabled:pointer-events-none"
+                style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                Next
+                <CaretRight size={14} weight="bold" />
+              </button>
+            </nav>
+          )}
         </div>
       </main>
 
       <Footer />
     </div>
-  )
+  );
 }

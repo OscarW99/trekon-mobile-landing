@@ -1,25 +1,82 @@
-import { useParams, Link, Navigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { ArrowLeft, Clock } from '@phosphor-icons/react'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
-import { getPostBySlug, getRecentPosts, getReadTime } from '../lib/blog-data'
-
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-}
+import { useEffect, useMemo, useState } from "react";
+import { useParams, Link, Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowLeft, Clock } from "@phosphor-icons/react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import ComingSoonModal from "../components/ComingSoonModal";
+import {
+  BlogPostMeta,
+  estimateReadTime,
+  excerptFromMarkdown,
+  formatDate,
+  parseFrontmatterValue,
+  stripMarkdownFence,
+  stripRedundantFirstHeading,
+} from "../lib/blog";
 
 export default function BlogPost() {
-  const { slug } = useParams<{ slug: string }>()
-  const post = slug ? getPostBySlug(slug) : undefined
+  const { slug } = useParams<{ slug: string }>();
+  const [posts, setPosts] = useState<BlogPostMeta[]>([]);
+  const [post, setPost] = useState<{
+    title: string;
+    date: string;
+    content: string;
+    image?: string;
+    excerpt?: string;
+    readTimeMinutes?: number;
+  } | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
-  if (!post) return <Navigate to="/blog" replace />
+  useEffect(() => {
+    if (!slug) return;
+    fetch("/blog/index.json")
+      .then((r) => r.json())
+      .then((list: BlogPostMeta[]) => {
+        setPosts(list || []);
+        const current = list?.find((p) => p.slug === slug);
+        if (!current) throw new Error("not-found");
+        return fetch(`/blog/${current.filename}.md`).then((r) => r.text()).then((raw) => ({ raw, current }));
+      })
+      .then(({ raw, current }) => {
+        const fmMatch = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+        if (!fmMatch) throw new Error("invalid-markdown");
+        const [, fm, body] = fmMatch;
+        const title = parseFrontmatterValue(fm, "title")?.trim() || "Post";
+        const date = parseFrontmatterValue(fm, "date")?.trim() || "";
+        const md = stripRedundantFirstHeading(stripMarkdownFence(body), title);
+        const excerpt =
+          current.excerpt?.trim() || excerptFromMarkdown(md, 200);
+        setPost({
+          title,
+          date,
+          content: md,
+          image: current.image,
+          excerpt,
+          readTimeMinutes:
+            typeof current.readTime === "number" && current.readTime > 0
+              ? current.readTime
+              : undefined,
+        });
+      })
+      .catch(() => setPost(null))
+      .finally(() => setLoading(false));
+  }, [slug]);
 
-  const related = getRecentPosts(3).filter((p) => p.slug !== post.slug).slice(0, 2)
+  const related = useMemo(() => {
+    if (!slug) return [];
+    return posts.filter((p) => p.slug !== slug).slice(0, 2);
+  }, [posts, slug]);
+
+  if (!slug) return <Navigate to="/blog" replace />;
+  if (!loading && !post) return <Navigate to="/blog" replace />;
+
+  const readMins =
+    post?.readTimeMinutes ?? (post ? estimateReadTime(post.content) : 1);
+  const leadText = post?.excerpt?.trim() || "";
 
   return (
     <div className="min-h-screen bg-background">
@@ -71,17 +128,19 @@ export default function BlogPost() {
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <span className="inline-flex items-center gap-1.5 text-xs text-ink-muted">
                 <Clock size={11} />
-                {getReadTime(post.content)} min read
+                {readMins} min read
               </span>
-              <time className="text-xs text-ink-muted">{formatDate(post.date)}</time>
+              <time className="text-xs text-ink-muted">{post ? formatDate(post.date) : ""}</time>
             </div>
 
             <h1 className="font-display font-black text-3xl text-ink tracking-tighter leading-tight mb-4">
-              {post.title}
+              {post?.title}
             </h1>
-            <p className="text-ink-secondary text-base leading-relaxed">
-              {post.excerpt}
-            </p>
+            {leadText ? (
+              <p className="text-ink-secondary text-base leading-relaxed">
+                {leadText}
+              </p>
+            ) : null}
           </motion.header>
 
           {/* Cover image */}
@@ -96,8 +155,8 @@ export default function BlogPost() {
               style={{ border: '1px solid rgba(255,255,255,0.07)' }}
             >
               <img
-                src={post.coverImage}
-                alt={post.title}
+                src={post?.image || "https://picsum.photos/seed/trekon-blog/800/450"}
+                alt={post?.title || "Trekon blog post"}
                 className="w-full h-52 object-cover"
               />
             </div>
@@ -109,8 +168,30 @@ export default function BlogPost() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             className="prose-article-mobile mb-12"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          >
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post?.content || ""}</ReactMarkdown>
+          </motion.div>
+
+          {/* Download CTA — same email capture as desktop footer modal */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+            className="mb-10"
+          >
+            <button
+              type="button"
+              onClick={() => setDownloadModalOpen(true)}
+              className="w-full rounded-2xl py-3.5 px-5 font-display font-semibold text-sm text-white
+                transition-transform active:scale-[0.98]"
+              style={{
+                background: 'linear-gradient(135deg, rgba(74,222,128,0.35) 0%, rgba(34,197,94,0.5) 100%)',
+                border: '1px solid rgba(74,222,128,0.35)',
+              }}
+            >
+              Download the app
+            </button>
+          </motion.div>
 
           {/* Related posts */}
           {related.length > 0 && (
@@ -134,7 +215,7 @@ export default function BlogPost() {
                       }}
                     >
                       <img
-                        src={rel.coverImage}
+                        src={rel.image || "https://picsum.photos/seed/trekon-blog-related/300/300"}
                         alt={rel.title}
                         className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
                       />
@@ -197,7 +278,12 @@ export default function BlogPost() {
         }
       `}</style>
 
+      <ComingSoonModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+      />
+
       <Footer />
     </div>
-  )
+  );
 }
