@@ -10,7 +10,6 @@ import ComingSoonModal from "../components/ComingSoonModal";
 import {
   BlogPostMeta,
   estimateReadTime,
-  excerptFromMarkdown,
   formatDate,
   parseFrontmatterValue,
   stripMarkdownFence,
@@ -24,8 +23,6 @@ export default function BlogPost() {
     title: string;
     date: string;
     content: string;
-    image?: string;
-    excerpt?: string;
     readTimeMinutes?: number;
   } | null>(null);
   const [loading, setLoading] = useState(true);
@@ -48,14 +45,10 @@ export default function BlogPost() {
         const title = parseFrontmatterValue(fm, "title")?.trim() || "Post";
         const date = parseFrontmatterValue(fm, "date")?.trim() || "";
         const md = stripRedundantFirstHeading(stripMarkdownFence(body), title);
-        const excerpt =
-          current.excerpt?.trim() || excerptFromMarkdown(md, 200);
         setPost({
           title,
           date,
           content: md,
-          image: current.image,
-          excerpt,
           readTimeMinutes:
             typeof current.readTime === "number" && current.readTime > 0
               ? current.readTime
@@ -76,7 +69,6 @@ export default function BlogPost() {
 
   const readMins =
     post?.readTimeMinutes ?? (post ? estimateReadTime(post.content) : 1);
-  const leadText = post?.excerpt?.trim() || "";
 
   return (
     <div className="min-h-screen bg-background">
@@ -133,40 +125,16 @@ export default function BlogPost() {
               <time className="text-xs text-ink-muted">{post ? formatDate(post.date) : ""}</time>
             </div>
 
-            <h1 className="font-display font-black text-3xl text-ink tracking-tighter leading-tight mb-4">
+            <h1 className="font-display font-black text-3xl text-ink tracking-tighter leading-tight mb-6">
               {post?.title}
             </h1>
-            {leadText ? (
-              <p className="text-ink-secondary text-base leading-relaxed">
-                {leadText}
-              </p>
-            ) : null}
           </motion.header>
-
-          {/* Cover image */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-            className="mb-8"
-          >
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{ border: '1px solid rgba(255,255,255,0.07)' }}
-            >
-              <img
-                src={post?.image || "https://picsum.photos/seed/trekon-blog/800/450"}
-                alt={post?.title || "Trekon blog post"}
-                className="w-full h-52 object-cover"
-              />
-            </div>
-          </motion.div>
 
           {/* Article body */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+            transition={{ delay: 0.1, duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             className="prose-article-mobile mb-12"
           >
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{post?.content || ""}</ReactMarkdown>
@@ -275,6 +243,22 @@ export default function BlogPost() {
         .prose-article-mobile strong {
           font-weight: 600;
           color: #F0FDF4;
+        }
+        .prose-article-mobile a {
+          color: #86efac;
+          font-weight: 500;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          text-decoration-thickness: 1px;
+          transition: color 0.15s ease;
+        }
+        .prose-article-mobile a:hover {
+          color: #bbf7d0;
+        }
+        .prose-article-mobile img {
+          border-radius: 0.75rem;
+          max-width: 100%;
+          height: auto;
         }
       `}</style>
 
