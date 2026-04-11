@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, "..", "public");
 const blogDir = path.join(publicDir, "blog");
-const SITE_URL = (process.env.SITE_URL || "https://mobile.trekon.run").replace(/\/$/, "");
+const SITE_URL = (process.env.SITE_URL || "https://m.trekon.run").replace(/\/$/, "");
 const STATIC_SITEMAP_PATHS = ["/", "/contact", "/blog"];
 
 if (!fs.existsSync(blogDir)) fs.mkdirSync(blogDir, { recursive: true });

@@ -4,13 +4,13 @@
 
 ## Main pages
 
-- https://mobile.trekon.run/
-- https://mobile.trekon.run/contact
-- https://mobile.trekon.run/blog
+- https://m.trekon.run/
+- https://m.trekon.run/contact
+- https://m.trekon.run/blog
 
 ## Sitemap
 
-- https://mobile.trekon.run/sitemap.xml
+- https://m.trekon.run/sitemap.xml
 
 ## Blog source
 
