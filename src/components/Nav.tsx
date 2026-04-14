@@ -30,8 +30,24 @@ export default function Nav() {
   }, [location.pathname])
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (!menuOpen) return
+    // Lock body without layout/viewport jump while overlay animates.
+    const scrollY = window.scrollY
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.left = '0'
+    document.body.style.right = '0'
+    document.body.style.width = '100%'
+    return () => {
+      const top = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
+      document.body.style.width = ''
+      const y = Math.abs(parseInt(top || '0', 10)) || 0
+      window.scrollTo(0, y)
+    }
   }, [menuOpen])
 
   // After navigating to home, scroll to the stored section
@@ -140,6 +156,7 @@ export default function Nav() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 12, opacity: 0 }}
                   transition={{ delay: i * 0.07 + 0.05, duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+                  style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
                 >
                   {link.sectionId ? (
                     <a
@@ -168,6 +185,7 @@ export default function Nav() {
                 transition={{ delay: navLinks.length * 0.07 + 0.1, duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
                 className="mt-6 bg-accent text-background font-bold text-lg px-10 py-4 rounded-full active:scale-[0.97] transition-transform duration-200"
                 onClick={() => { setMenuOpen(false); setShowVideo(true) }}
+                style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >
                 Download free app
               </motion.button>

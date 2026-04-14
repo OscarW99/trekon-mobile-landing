@@ -267,8 +267,8 @@ export default function BlogPost() {
           border: 1px solid rgba(240, 253, 244, 0.16);
           border-radius: 0.75rem;
           overflow: hidden;
-          display: block;
-          overflow-x: auto;
+          display: table;
+          table-layout: auto;
           background: rgba(255, 255, 255, 0.02);
         }
         .prose-article-mobile thead {
@@ -283,7 +283,8 @@ export default function BlogPost() {
           padding: 0.6rem 0.7rem;
           border-bottom: 1px solid rgba(240, 253, 244, 0.12);
           text-align: left;
-          white-space: nowrap;
+          white-space: normal;
+          vertical-align: top;
         }
         .prose-article-mobile th {
           font-weight: 700;
