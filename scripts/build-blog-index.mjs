@@ -90,7 +90,15 @@ for (const file of files) {
 }
 
 list.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-fs.writeFileSync(path.join(publicDir, "blog-index.json"), JSON.stringify(list, null, 2));
+const deduped = [];
+const seenSlugs = new Set();
+for (const post of list) {
+  if (!post.slug) continue;
+  if (seenSlugs.has(post.slug)) continue;
+  seenSlugs.add(post.slug);
+  deduped.push(post);
+}
+fs.writeFileSync(path.join(publicDir, "blog-index.json"), JSON.stringify(deduped, null, 2));
 
 const entries = [];
 for (const p of STATIC_SITEMAP_PATHS) {
@@ -100,7 +108,7 @@ for (const p of STATIC_SITEMAP_PATHS) {
     priority: p === "/" ? "1.0" : "0.8",
   });
 }
-for (const post of list) {
+for (const post of deduped) {
   entries.push({
     loc: `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`,
     lastmod: post.date || undefined,
