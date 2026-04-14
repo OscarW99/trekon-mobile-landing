@@ -30,7 +30,7 @@ export default function BlogPost() {
 
   useEffect(() => {
     if (!slug) return;
-    fetch("/blog/index.json")
+    fetch("/blog-index.json")
       .then((r) => r.json())
       .then((list: BlogPostMeta[]) => {
         setPosts(list || []);

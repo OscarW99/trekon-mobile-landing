@@ -183,7 +183,8 @@ export default function Nav() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 12, opacity: 0 }}
                 transition={{ delay: navLinks.length * 0.07 + 0.1, duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-                className="mt-6 bg-accent text-background font-bold text-lg px-10 py-4 rounded-full active:scale-[0.97] transition-transform duration-200"
+                whileTap={{ scale: 0.97 }}
+                className="mt-6 bg-accent text-background font-bold text-lg px-10 py-4 rounded-full"
                 onClick={() => { setMenuOpen(false); setShowVideo(true) }}
                 style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
               >

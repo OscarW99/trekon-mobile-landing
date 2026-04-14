@@ -30,7 +30,7 @@ export default function Blog() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    fetch("/blog/index.json")
+    fetch("/blog-index.json")
       .then((r) => r.json())
       .then((list: BlogPostMeta[]) => setPosts(list || []))
       .catch(() => setPosts([]))

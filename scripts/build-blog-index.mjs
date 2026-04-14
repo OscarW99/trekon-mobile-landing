@@ -1,5 +1,5 @@
 /**
- * Build public/blog/index.json and public/sitemap.xml from public/blog/*.md.
+ * Build public/blog-index.json and public/sitemap.xml from public/blog/*.md.
  */
 import fs from "fs";
 import path from "path";
@@ -90,7 +90,7 @@ for (const file of files) {
 }
 
 list.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-fs.writeFileSync(path.join(blogDir, "index.json"), JSON.stringify(list, null, 2));
+fs.writeFileSync(path.join(publicDir, "blog-index.json"), JSON.stringify(list, null, 2));
 
 const entries = [];
 for (const p of STATIC_SITEMAP_PATHS) {

@@ -134,11 +134,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+            whileTap={{ scale: 0.97 }}
             onClick={() =>
               document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })
             }
             className="w-full glass-panel text-ink font-semibold text-sm py-3.5 rounded-2xl
-              transition-all duration-300 active:scale-[0.97]"
+              transition-colors duration-300"
+            style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
           >
             Learn more
           </motion.button>
