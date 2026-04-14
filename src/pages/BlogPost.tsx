@@ -260,6 +260,37 @@ export default function BlogPost() {
           max-width: 100%;
           height: auto;
         }
+        .prose-article-mobile table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.25rem 0;
+          border: 1px solid rgba(240, 253, 244, 0.16);
+          border-radius: 0.75rem;
+          overflow: hidden;
+          display: block;
+          overflow-x: auto;
+          background: rgba(255, 255, 255, 0.02);
+        }
+        .prose-article-mobile thead {
+          background: rgba(134, 239, 172, 0.1);
+        }
+        .prose-article-mobile th,
+        .prose-article-mobile td {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 0.875rem;
+          line-height: 1.5;
+          color: #F0FDF4;
+          padding: 0.6rem 0.7rem;
+          border-bottom: 1px solid rgba(240, 253, 244, 0.12);
+          text-align: left;
+          white-space: nowrap;
+        }
+        .prose-article-mobile th {
+          font-weight: 700;
+        }
+        .prose-article-mobile tr:last-child td {
+          border-bottom: 0;
+        }
       `}</style>
 
       <ComingSoonModal
