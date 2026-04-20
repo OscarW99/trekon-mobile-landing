@@ -19,8 +19,8 @@ function CanonicalAndAlternateTags() {
 
   useEffect(() => {
     const cleanPath = pathname === '/' ? '' : pathname
-    const canonicalHref = `https://www.trekon.run${cleanPath}`
-    const mobileHref = `https://m.trekon.run${cleanPath}`
+    const canonicalHref = `https://m.trekon.run${cleanPath}`
+    const desktopHref = `https://www.trekon.run${cleanPath}`
 
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
     if (!canonical) {
@@ -30,15 +30,15 @@ function CanonicalAndAlternateTags() {
     }
     canonical.setAttribute('href', canonicalHref)
 
-    let alternate = document.head.querySelector('link[data-mobile-alternate="true"]') as HTMLLinkElement | null
+    let alternate = document.head.querySelector('link[data-desktop-alternate="true"]') as HTMLLinkElement | null
     if (!alternate) {
       alternate = document.createElement('link')
       alternate.setAttribute('rel', 'alternate')
-      alternate.setAttribute('media', 'only screen and (max-width: 768px)')
-      alternate.setAttribute('data-mobile-alternate', 'true')
+      alternate.setAttribute('media', 'only screen and (min-width: 769px)')
+      alternate.setAttribute('data-desktop-alternate', 'true')
       document.head.appendChild(alternate)
     }
-    alternate.setAttribute('href', mobileHref)
+    alternate.setAttribute('href', desktopHref)
   }, [pathname])
 
   return null
