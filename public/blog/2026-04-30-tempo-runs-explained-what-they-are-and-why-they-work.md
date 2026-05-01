@@ -26,7 +26,7 @@ A landmark 1982 study by Bertil Sjödin and colleagues found that after 14 weeks
 
 Training at or near LT pace teaches your muscles to clear lactate more efficiently and delays the point at which fatigue accelerates. Over time, your aerobic zone expands, and paces that once felt anaerobic become sustainable.
 
-![Diagram showing lactate threshold zones on an effort and pace scale](/blog/assets/tempo-runs-explained-what-they-are-and-why-they-work/image_2.jpg)
+![Diagram showing lactate threshold zones on an effort and pace scale](/blog/assets/tempo-runs-explained-what-they-are-and-why-they-work/image_2.png)
 
 ## Key Benefits of Tempo Running
 
