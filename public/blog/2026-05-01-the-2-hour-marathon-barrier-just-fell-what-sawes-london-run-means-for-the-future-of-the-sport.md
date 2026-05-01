@@ -8,7 +8,7 @@ slug: "the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the
 
 On April 26, 2026, Kenya's Sabastian Sawe crossed the finish line of the London Marathon in 1:59:30, becoming the first man to officially break the two-hour barrier in a sanctioned race, shattering the previous world record by an astonishing 65 seconds.
 
-![Sabastian Sawe crossing the finish line at the 2026 London Marathon, arms raised with crowd cheering](/blog/assets/the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport/image_1.jpg)
+![Sabastian Sawe crossing the finish line at the 2026 London Marathon, arms raised with crowd cheering](/blog/assets/the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport/sebastian-sawe-london-marathon-fox-news-001.webp)
 
 What made this performance even more remarkable was that Sawe was not alone. Ethiopia's Yomif Kejelcha finished just 11 seconds behind in 1:59:41, on his marathon debut, making it the first time two men broke two hours in the same race. Third-place finisher Jacob Kiplimo clocked 2:00:28, meaning the entire podium finished faster than the previous world record.
 
@@ -34,7 +34,7 @@ His marathon debut came in Valencia in 2024, where he ran 2:02:05, the second-fa
 
 ## Breaking Down the Race: How 1:59:30 Actually Happened
 
-![The lead pack running together through central London during the 2026 London Marathon, pacemakers visible](/blog/assets/the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport/image_2.jpg)
+![The lead pack running together through central London during the 2026 London Marathon, pacemakers visible](/blog/assets/the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport/HG06RlYbYAAq5md.jpg)
 
 The race unfolded with controlled aggression. A lead group featuring Sawe, Kejelcha, Jacob Kiplimo, and Olympic champion Tamirat Tola moved through the early kilometres at an ambitious but sustainable tempo.
 
@@ -73,7 +73,7 @@ Race directors and coaches will now rethink everything. Key changes include:
 
 ## The Role of Technology: Shoes and Marginal Gains
 
-![Close-up of elite marathon supershoes on a runner mid-race, highlighting advanced carbon plate foam sole technology](/blog/assets/the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport/image_3.jpg)
+![Close-up of elite marathon supershoes on a runner mid-race, highlighting advanced carbon plate foam sole technology](/blog/assets/the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport/0_Britain-London-Marathon.avif)
 
 Sawe raced in the Adidas Adizero Adios Pro Evo 3, weighing approximately 97 grams, featuring the latest generation of carbon plate and foam technology. Research suggests modern supershoes can improve running economy by several percentage points compared to traditional racing flats.
 
