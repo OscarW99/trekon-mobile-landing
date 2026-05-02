@@ -1,11 +1,21 @@
 [
   {
+    "file": "2026-05-02-the-london-marathon-explained-a-brief-history-the-numbers-and-what-an-average-finisher-actually-runs.md",
+    "filename": "2026-05-02-the-london-marathon-explained-a-brief-history-the-numbers-and-what-an-average-finisher-actually-runs",
+    "title": "The London Marathon Explained: A Brief History, the Numbers, and What an Average Finisher Actually Runs",
+    "date": "2026-05-02",
+    "slug": "the-london-marathon-explained-a-brief-history-the-numbers-and-what-an-average-finisher-actually-runs",
+    "excerpt": "Every April, tens of thousands of runners pour through the streets of London, past the Cutty Sark, over Tower Bridge, and down The Mall toward Buckingham Palac…",
+    "readTime": 6,
+    "image": "/blog/assets/the-london-marathon-explained-a-brief-history-the-numbers-and-what-an-average-finisher-actually-runs/image_1.jpg"
+  },
+  {
     "file": "2026-05-01-the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport.md",
     "filename": "2026-05-01-the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport",
     "title": "The 2-Hour Marathon Barrier Just Fell: What Sawe's London Run Means for the Future of the Sport",
     "date": "2026-05-01",
     "slug": "the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport",
-    "excerpt": "On April 26, 2026, Kenya's Sabastian Sawe crossed the finish line of the London Marathon in 1:59:30, becoming the first man to officially break the two-hour ba\u2026",
+    "excerpt": "On April 26, 2026, Kenya's Sabastian Sawe crossed the finish line of the London Marathon in 1:59:30, becoming the first man to officially break the two-hour ba…",
     "readTime": 6,
     "image": "/blog/assets/the-2-hour-marathon-barrier-just-fell-what-sawes-london-run-means-for-the-future-of-the-sport/sebastian-sawe-london-marathon-fox-news-001.webp"
   },
@@ -15,7 +25,7 @@
     "title": "Tempo Runs Explained: What They Are and Why They Work",
     "date": "2026-04-30",
     "slug": "tempo-runs-explained-what-they-are-and-why-they-work",
-    "excerpt": "If you've seen \"tempo run\" on a training plan and wondered exactly what it means, you're not alone. A tempo run is a sustained, comfortably hard effort, typica\u2026",
+    "excerpt": "If you've seen \"tempo run\" on a training plan and wondered exactly what it means, you're not alone. A tempo run is a sustained, comfortably hard effort, typica…",
     "readTime": 7,
     "image": "/blog/assets/tempo-runs-explained-what-they-are-and-why-they-work/image_1.jpg"
   },
@@ -25,7 +35,7 @@
     "title": "Superfoods for Runners: What's Worth the Hype and What Isn't",
     "date": "2026-04-29",
     "slug": "superfoods-for-runners-whats-worth-the-hype-and-what-isnt",
-    "excerpt": "Walk through any grocery store or scroll through a running nutrition blog and you will encounter the word \"superfood\" plastered on everything from exotic powde\u2026",
+    "excerpt": "Walk through any grocery store or scroll through a running nutrition blog and you will encounter the word \"superfood\" plastered on everything from exotic powde…",
     "readTime": 6,
     "image": "/blog/assets/superfoods-for-runners-whats-worth-the-hype-and-what-isnt/image_1.jpg"
   },
@@ -35,7 +45,7 @@
     "title": "How to Train Through the Winter Without Losing Momentum",
     "date": "2026-04-28",
     "slug": "how-to-train-through-the-winter-without-losing-momentum",
-    "excerpt": "Knowing how to train through the winter without losing momentum is one of the most common challenges endurance athletes face each year. When temperatures drop,\u2026",
+    "excerpt": "Knowing how to train through the winter without losing momentum is one of the most common challenges endurance athletes face each year. When temperatures drop,…",
     "readTime": 6,
     "image": "/blog/assets/how-to-train-through-the-winter-without-losing-momentum/image_1.jpg"
   },
@@ -45,7 +55,7 @@
     "title": "Runner's Knee: Causes, Symptoms, and How to Get Back on Your Feet",
     "date": "2026-04-27",
     "slug": "runners-knee-causes-symptoms-and-how-to-get-back-on-your-feet",
-    "excerpt": "If you have ever felt a dull, nagging ache around your kneecap mid-run, you are not alone. Patellofemoral pain syndrome (PFPS) is one of the most common runnin\u2026",
+    "excerpt": "If you have ever felt a dull, nagging ache around your kneecap mid-run, you are not alone. Patellofemoral pain syndrome (PFPS) is one of the most common runnin…",
     "readTime": 6,
     "image": "/blog/assets/runners-knee-causes-symptoms-and-how-to-get-back-on-your-feet/image_1.jpg"
   },
@@ -55,7 +65,7 @@
     "title": "The Real Reason You're Not Getting Faster",
     "date": "2026-04-26",
     "slug": "the-real-reason-youre-not-getting-faster",
-    "excerpt": "You're logging the miles, putting in the effort, and showing up consistently - yet your pace refuses to budge. If that sounds familiar, you're not alone. The r\u2026",
+    "excerpt": "You're logging the miles, putting in the effort, and showing up consistently - yet your pace refuses to budge. If that sounds familiar, you're not alone. The r…",
     "readTime": 6,
     "image": "/blog/assets/the-real-reason-youre-not-getting-faster/image_1.jpg"
   },
@@ -65,7 +75,7 @@
     "title": "A Realistic Guide to Marathon Training for Normal People",
     "date": "2026-04-25",
     "slug": "a-realistic-guide-to-marathon-training-for-normal-people",
-    "excerpt": "If you have a marathon on the calendar and a life full of work, family, and everything else in between, this is a realistic guide to marathon training for norm\u2026",
+    "excerpt": "If you have a marathon on the calendar and a life full of work, family, and everything else in between, this is a realistic guide to marathon training for norm…",
     "readTime": 6,
     "image": "/blog/assets/a-realistic-guide-to-marathon-training-for-normal-people/image_1.jpg"
   },
@@ -75,7 +85,7 @@
     "title": "How to Stop Losing Fitness When Life Gets in the Way",
     "date": "2026-04-24",
     "slug": "how-to-stop-losing-fitness-when-life-gets-in-the-way",
-    "excerpt": "You finally found a routine that works. Workouts scheduled, meals planned, momentum building. Then a deadline hits, a kid gets sick, or a move happens, and sud\u2026",
+    "excerpt": "You finally found a routine that works. Workouts scheduled, meals planned, momentum building. Then a deadline hits, a kid gets sick, or a move happens, and sud…",
     "readTime": 6,
     "image": "/blog/assets/how-to-stop-losing-fitness-when-life-gets-in-the-way/image_1.jpg"
   },
@@ -85,7 +95,7 @@
     "title": "How to Structure a Training Block Like a Serious Runner",
     "date": "2026-04-23",
     "slug": "how-to-structure-a-training-block-like-a-serious-runner",
-    "excerpt": "Most runners train consistently but not intentionally. They log miles week after week with no clear progression, then wonder why race day feels harder than exp\u2026",
+    "excerpt": "Most runners train consistently but not intentionally. They log miles week after week with no clear progression, then wonder why race day feels harder than exp…",
     "readTime": 7,
     "image": "/blog/assets/how-to-structure-a-training-block-like-a-serious-runner/image_1.jpg"
   },
@@ -95,7 +105,7 @@
     "title": "What Happens to Your Body During a Long Run",
     "date": "2026-04-22",
     "slug": "what-happens-to-your-body-during-a-long-run",
-    "excerpt": "Understanding what happens to your body during a long run is one of the most useful things any runner can know. From the moment you take your first stride, you\u2026",
+    "excerpt": "Understanding what happens to your body during a long run is one of the most useful things any runner can know. From the moment you take your first stride, you…",
     "readTime": 6,
     "image": "/blog/assets/what-happens-to-your-body-during-a-long-run/image_1.jpg"
   },
@@ -105,7 +115,7 @@
     "title": "Zone 2 Training: The Science Behind Running Slowly to Get Faster",
     "date": "2026-04-21",
     "slug": "zone-2-training-the-science-behind-running-slowly-to-get-faster",
-    "excerpt": "If you have ever strapped on a heart rate monitor and tried to keep your effort genuinely easy, you know the uncomfortable truth: running slowly is not comfort\u2026",
+    "excerpt": "If you have ever strapped on a heart rate monitor and tried to keep your effort genuinely easy, you know the uncomfortable truth: running slowly is not comfort…",
     "readTime": 6,
     "image": "/blog/assets/zone-2-training-the-science-behind-running-slowly-to-get-faster/image_1.jpg"
   },
@@ -115,7 +125,7 @@
     "title": "The 80/20 Rule: Train Smarter, Race Faster",
     "date": "2026-04-20",
     "slug": "the-8020-rule-train-smarter-race-faster",
-    "excerpt": "Most runners assume that training harder leads to racing faster. But research consistently points in a different direction. The 80/20 Rule: Train Smarter, Race\u2026",
+    "excerpt": "Most runners assume that training harder leads to racing faster. But research consistently points in a different direction. The 80/20 Rule: Train Smarter, Race…",
     "readTime": 6,
     "image": "/blog/assets/the-8020-rule-train-smarter-race-faster/image_1.jpg"
   },
@@ -125,7 +135,7 @@
     "title": "Why Rest Days Are Where Fitness Is Actually Built",
     "date": "2026-04-19",
     "slug": "why-rest-days-are-where-fitness-is-actually-built",
-    "excerpt": "Most people treat rest days as a guilty pause from progress. But why rest days are where fitness is actually built is one of the most important things to under\u2026",
+    "excerpt": "Most people treat rest days as a guilty pause from progress. But why rest days are where fitness is actually built is one of the most important things to under…",
     "readTime": 6,
     "image": "/blog/assets/why-rest-days-are-where-fitness-is-actually-built/image_1.jpg"
   },
@@ -135,7 +145,7 @@
     "title": "How to Build Speed Without Burning Out",
     "date": "2026-04-18",
     "slug": "how-to-build-speed-without-burning-out",
-    "excerpt": "Learning how to build speed without burning out is one of the most common challenges runners face. Many athletes assume that logging more miles is the answer,\u2026",
+    "excerpt": "Learning how to build speed without burning out is one of the most common challenges runners face. Many athletes assume that logging more miles is the answer,…",
     "readTime": 7,
     "image": "/blog/assets/how-to-build-speed-without-burning-out/image_1.jpg"
   },
@@ -145,7 +155,7 @@
     "title": "Everything You Need to Know About Running Your First Half Marathon",
     "date": "2026-04-17",
     "slug": "everything-you-need-to-know-about-running-your-first-half-marathon",
-    "excerpt": "If you've been thinking about signing up for a half marathon, you're already closer to the finish line than you think. Everything you need to know about runnin\u2026",
+    "excerpt": "If you've been thinking about signing up for a half marathon, you're already closer to the finish line than you think. Everything you need to know about runnin…",
     "readTime": 7,
     "image": "/blog/assets/everything-you-need-to-know-about-running-your-first-half-marathon/image_1.jpg"
   },
@@ -155,7 +165,7 @@
     "title": "Why Your Easy Runs Are the Secret Weapon You're Ignoring",
     "date": "2026-04-16",
     "slug": "why-your-easy-runs-are-the-secret-weapon-youre-ignoring",
-    "excerpt": "If you've ever felt guilty slowing down on a training day, you're not alone. Most runners assume progress only comes from pushing harder and leaving every work\u2026",
+    "excerpt": "If you've ever felt guilty slowing down on a training day, you're not alone. Most runners assume progress only comes from pushing harder and leaving every work…",
     "readTime": 7,
     "image": "/blog/assets/why-your-easy-runs-are-the-secret-weapon-youre-ignoring/image_1.jpg"
   },
@@ -165,7 +175,7 @@
     "title": "How to Improve Your 10K Time Without Overtraining",
     "date": "2026-04-15",
     "slug": "how-to-improve-your-10k-time-without-overtraining",
-    "excerpt": "Knowing how to improve your 10K time without overtraining is the difference between running a new personal best and burning out before race day. The 10K demand\u2026",
+    "excerpt": "Knowing how to improve your 10K time without overtraining is the difference between running a new personal best and burning out before race day. The 10K demand…",
     "readTime": 7,
     "image": "/blog/assets/how-to-improve-your-10k-time-without-overtraining/image_1.jpg"
   },
@@ -175,7 +185,7 @@
     "title": "How to Prevent Common Running Injuries",
     "date": "2026-04-14",
     "slug": "how-to-prevent-common-running-injuries",
-    "excerpt": "Running is one of the most accessible forms of exercise, but it comes with a real risk of getting hurt. Research shows that nearly half of all recreational run\u2026",
+    "excerpt": "Running is one of the most accessible forms of exercise, but it comes with a real risk of getting hurt. Research shows that nearly half of all recreational run…",
     "readTime": 6,
     "image": "/blog/assets/how-to-prevent-common-running-injuries/image_1.jpg"
   },
@@ -185,7 +195,7 @@
     "title": "How to Build a Running Habit That Actually Sticks",
     "date": "2026-04-13",
     "slug": "how-to-build-a-running-habit-that-actually-sticks",
-    "excerpt": "Learning how to build a running habit that actually sticks is something most runners struggle with at some point. You lace up with the best intentions, feel gr\u2026",
+    "excerpt": "Learning how to build a running habit that actually sticks is something most runners struggle with at some point. You lace up with the best intentions, feel gr…",
     "readTime": 6,
     "image": "/blog/assets/how-to-build-a-running-habit-that-actually-sticks/image_1.jpg"
   },
@@ -195,7 +205,7 @@
     "title": "Zone 2 Running Explained for Everyday Runners",
     "date": "2026-04-13",
     "slug": "zone-2-running-explained-for-everyday-runners",
-    "excerpt": "If you have spent any time around running communities lately, you have probably heard the term \"Zone 2\" come up again and again. This guide cuts through the no\u2026",
+    "excerpt": "If you have spent any time around running communities lately, you have probably heard the term \"Zone 2\" come up again and again. This guide cuts through the no…",
     "readTime": 7,
     "image": "/blog/assets/zone-2-running-explained-for-everyday-runners/image_1.jpg"
   },
@@ -205,7 +215,7 @@
     "title": "5K Training Plan for Beginners",
     "date": "2026-04-11",
     "slug": "5k-training-plan-for-beginners",
-    "excerpt": "Whether you've never run a mile in your life or you're returning to fitness after a long break, following a 5K Training Plan for Beginners gives you a clear, s\u2026",
+    "excerpt": "Whether you've never run a mile in your life or you're returning to fitness after a long break, following a 5K Training Plan for Beginners gives you a clear, s…",
     "readTime": 6,
     "image": "/blog/assets/5k-training-plan-for-beginners/image_1.jpg"
   }
