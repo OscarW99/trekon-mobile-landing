@@ -8,7 +8,7 @@ slug: "inside-the-adidas-adizero-adios-pro-evo-3-the-shoe-that-just-cracked-the-
 
 On April 27, 2026, Sabastian Sawe crossed the finish line of the London Marathon in 1:59:30, becoming the first runner to break two hours in an officially sanctioned race. Yomif Kejelcha followed in 1:59:41, and Tigist Assefa shattered the women-only world record with a 2:15:41. All three athletes wore the **Adidas Adizero Adios Pro Evo 3**.
 
-![Adidas Adizero Adios Pro Evo 3 racing shoe on a track](/blog/assets/inside-the-adidas-adizero-adios-pro-evo-3-the-shoe-that-just-cracked-the-2-hour-marathon/image_1.jpg)
+![Adidas Adizero Adios Pro Evo 3 racing shoe on a track](/blog/assets/inside-the-adidas-adizero-adios-pro-evo-3-the-shoe-that-just-cracked-the-2-hour-marathon/image_1.png)
 
 Weighing just 97 grams in a men's size 9, the Evo 3 is the lightest carbon racing shoe ever built for marathon distances. Adidas engineered it with a single obsession: maximizing running economy at every level, from a revolutionary ENERGYRIM carbon structure to a next-generation Lightstrike Pro Evo foam that is 50% lighter and delivers 11% more energy return than its predecessor. Here at Trekon, we break down exactly what makes this shoe so extraordinary.
 
@@ -38,7 +38,7 @@ The result is a shoe that feels softer and more responsive simultaneously, a com
 
 ### Lightstrike Pro Evo Foam
 
-![Close-up cross-section of the Adizero Adios Pro Evo 3 midsole showing EnergyRim carbon structure and Lightstrike Pro Evo foam layers](/blog/assets/inside-the-adidas-adizero-adios-pro-evo-3-the-shoe-that-just-cracked-the-2-hour-marathon/image_2.jpg)
+![Close-up cross-section of the Adizero Adios Pro Evo 3 midsole showing EnergyRim carbon structure and Lightstrike Pro Evo foam layers](/blog/assets/inside-the-adidas-adizero-adios-pro-evo-3-the-shoe-that-just-cracked-the-2-hour-marathon/image_2.jpeg)
 
 The new **Lightstrike Pro Evo** compound is:
 
