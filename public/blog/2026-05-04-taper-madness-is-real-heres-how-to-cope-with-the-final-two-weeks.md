@@ -26,7 +26,7 @@ The discomfort you feel during taper has a clear physiological explanation.
 - **Muscle repair:** Uninterrupted recovery allows microscopic muscle damage to heal and connective tissue to strengthen, which can produce new twinges and aches.
 - **Neuromuscular sharpening:** Despite lower volume, neuromuscular power can improve by around 6% with optimal tapering, revealing the fitness you have built without the fatigue masking it.
 
-![Close-up illustration showing muscle glycogen loading and recovery during marathon taper week](/blog/assets/taper-madness-is-real-heres-how-to-cope-with-the-final-two-weeks/image_2.jpg)
+![Runner eating a carb-rich meal the day before a marathon](/blog/assets/taper-madness-is-real-heres-how-to-cope-with-the-final-two-weeks/image_2.jpg)
 
 The heavy legs and strange sensations are not signs of decline. They are signs that your body is doing exactly what it should.
 
