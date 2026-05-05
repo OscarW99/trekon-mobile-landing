@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import ComingSoonModal from "../components/ComingSoonModal";
+import ImageLightbox from "../components/ImageLightbox";
 import {
   BlogPostMeta,
   estimateReadTime,
@@ -27,6 +28,8 @@ export default function BlogPost() {
   } | null>(null);
   const [loading, setLoading] = useState(true);
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [lightboxAlt, setLightboxAlt] = useState<string>("");
 
   useEffect(() => {
     if (!slug) return;
@@ -137,7 +140,27 @@ export default function BlogPost() {
             transition={{ delay: 0.1, duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             className="prose-article-mobile mb-12"
           >
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post?.content || ""}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                img: ({ src, alt }) =>
+                  typeof src === "string" ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setLightboxSrc(src);
+                        setLightboxAlt(alt ?? "");
+                      }}
+                      className="block w-full p-0 m-0 border-0 bg-transparent cursor-zoom-in"
+                      aria-label={alt ? `Expand image: ${alt}` : "Expand image"}
+                    >
+                      <img src={src} alt={alt ?? ""} loading="lazy" />
+                    </button>
+                  ) : null,
+              }}
+            >
+              {post?.content || ""}
+            </ReactMarkdown>
           </motion.div>
 
           {/* Download CTA — same email capture as desktop footer modal */}
@@ -297,6 +320,12 @@ export default function BlogPost() {
       <ComingSoonModal
         isOpen={downloadModalOpen}
         onClose={() => setDownloadModalOpen(false)}
+      />
+
+      <ImageLightbox
+        src={lightboxSrc}
+        alt={lightboxAlt}
+        onClose={() => setLightboxSrc(null)}
       />
 
       <Footer />
