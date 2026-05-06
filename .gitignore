@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code: user-local permissions/approved-commands. Never commit.
+.claude/settings.local.json
