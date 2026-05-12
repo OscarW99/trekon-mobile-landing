@@ -64,6 +64,8 @@ For runs under 90 minutes, water is usually sufficient. Once you push past that 
 
 **Target 30 to 60 g of carbohydrates per hour** for runs longer than 90 minutes. Using mixed sources, glucose plus fructose, can push that ceiling toward 90 g per hour for trained runners.
 
+![Runner taking an energy gel from a vest pocket during a trail race](/blog/assets/what-to-eat-on-long-run-days-and-what-to-avoid/image_3.jpg)
+
 ### Mid-Run Fuel Options
 
 - **Energy gels** - compact and fast-absorbing
@@ -102,6 +104,8 @@ No single fueling plan works for every runner. GI tolerance, sweat rate, run int
 
 [Trekon](https://www.trekon.run) builds personalised training plans that account for these individual differences, helping runners integrate nutrition practice into their long run schedule. The golden rule: practice your fueling strategy in training, never experiment for the first time on race day.
 
+![Runner logging post-run nutrition notes in a training journal beside a water bottle and energy gels](/blog/assets/what-to-eat-on-long-run-days-and-what-to-avoid/image_2.jpg)
+
 ### How to Test and Personalise Your Long Run Fueling Strategy
 
 Building a reliable fueling strategy takes deliberate experimentation over several weeks:
@@ -121,13 +125,9 @@ Building a reliable fueling strategy takes deliberate experimentation over sever
 | During (every 30-60 min) | Gels, chews, sports drink, real food | Waiting until you feel tired |
 | 30-60 min after | Smoothie, Greek yogurt, wrap, pasta | Greasy, high-fat recovery meals |
 
-![Runner logging post-run nutrition notes in a training journal beside a water bottle and energy gels](/blog/assets/what-to-eat-on-long-run-days-and-what-to-avoid/image_2.jpg)
-
 **Key takeaways:**
 - Start fueling at 45 to 60 minutes into any run over 90 minutes
 - Target 30 to 60 g of carbohydrates per hour during the run
 - Recover within 30 to 60 minutes using a carb-to-protein ratio of roughly 3:1
 - Test everything in training before relying on it on race day
 - Avoid high-fat, high-fiber, and spicy foods in the hours before you run
-
-![Runner taking an energy gel from a vest pocket during a trail race](/blog/assets/what-to-eat-on-long-run-days-and-what-to-avoid/image_3.jpg)
